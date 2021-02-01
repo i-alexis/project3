@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ALIEN GENERATOR</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+        <script src="scripts.js" defer></script>
+    </head>
+    <body>
+           <div id="title">
+                ALIEN GENERATOR
+           </div>
+           <main>
+                <div id="gen">
+                        <div id="creature">
+                            <div id="body">
+                                
+                            </div>
+                            <div class="arm">
+
+                            </div>
+                            <div class="leg">
+
+                            </div>
+                            <div id="head">
+
+                            </div>
+
+                        </div>
+                        <div id="shadow">
+
+                        </div>
+                </div>
+                <div id="editor">
+                        <div id="bodyplan">
+                            <b>choose a body plan:</b>
+                            <button>HUMANOID</button> <button>QUADRUPED</button> <button>CENTIPEDE</button>
+                        </div>
+                        <div class="manip">
+                            arms
+                            <input id="armHandle" type="range" step="1" min="1" max="10" value="3">
+                        </div>
+                        <div class="manip">
+                            legs
+                            <input id="legHandle" type="range" step="1">
+                        </div>
+                </div>
+           </main> 
+    </body>
+</html>
