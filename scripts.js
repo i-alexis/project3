@@ -7,11 +7,12 @@
         > 2=quadruped: change arms to display:none
 */
 
-var bodyHeight=250
-var bodyWidth=100
-var limbWidth=50
+
 
 $(function(){
+    var bodyHeight=250
+    var bodyWidth=100
+    var limbWidth=50
     $("#height").change(function(){
         bodyHeight=($("#height").val()) + "px"
         $("#body").css("height", bodyHeight)
@@ -19,9 +20,15 @@ $(function(){
     
     $("#width").change(function(){
         bodyWidth=parseInt($("#width").val())
-        armPos=(bodyWidth+limbWidth)+"px"
+        armPos=(bodyWidth)+"px"
+        legPos=(bodyWidth-limbWidth)+"px"
         $("#body").css("width", bodyWidth+"px")
-        $(".arm:after").css("left",armPos)
+        $("#arm2").css("left",armPos)
+        $("#leg2").css("left",legPos)
         console.log(armPos)
+        // armPos=(bodyWidth+limbWidth)+"px"
+        // $("#body").css("width", bodyWidth+"px")
+        // $("#arm2").css("left",armPos)
+        // console.log(armPos)
     })
 })
