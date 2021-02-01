@@ -15,38 +15,43 @@
            </div>
            <main>
                 <div id="gen">
-                        <div id="creature">
-                            <div id="body">
-                                
-                            </div>
-                            <div class="arm">
-
-                            </div>
-                            <div class="leg">
-
-                            </div>
+                        <div id="creature">                            
                             <div id="head">
-
+                                <div class="eyes"></div>
+                            </div>
+                            <div id="body">
+                                <div class="arm"></div>
+                                <div class="leg"></div>
                             </div>
 
                         </div>
                         <div id="shadow">
 
                         </div>
+                        
                 </div>
                 <div id="editor">
                         <div id="bodyplan">
-                            <b>choose a body plan:</b>
-                            <button>HUMANOID</button> <button>QUADRUPED</button> <button>CENTIPEDE</button>
+                            <b>choose a body plan:</b><br>
+                            <button>BIPED</button><button>QUADRUPED</button>
                         </div>
-                        <div class="manip">
-                            arms
-                            <input id="armHandle" type="range" step="1" min="1" max="10" value="3">
+                        <div class="manip" id="bodyHeightCtrl">
+                            body height
+                            <input id="height" type="range" step="10" min="200" max="400" value="3">
                         </div>
-                        <div class="manip">
-                            legs
+                        <div class="manip" id="bodyWidthCtrl">
+                            body width
+                            <input id="width" type="range" min="100" max="300" value="3">
+                        </div>
+                        <div class="manip" id="armControl">
+                            pairs of arms
+                            <input id="armHandle" type="range" min="1" max="10" value="3">
+                        </div>
+                        <div class="manip" id="legControl">
+                            pairs of legs
                             <input id="legHandle" type="range" step="1">
                         </div>
+                        
                 </div>
            </main> 
     </body>

@@ -1,13 +1,21 @@
+*,*:before,*:after{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
 body{
     background-color: #0b1014;
     color: #8ECCC9;
     font-family: 'Abel', sans-serif;
     margin: 0;
+    display: grid;
+    grid-template-rows: 90pt 1fr;
+    height: 100vh;
 }
 #title{
     color:#F3E28F;
     font-size: 60pt;
-    float: right;
+    grid-row: 1/2;
     width: 100vw;
     text-align: right;
     display: block;
@@ -16,9 +24,11 @@ main{
     width: 100vw;
     height: auto;
     margin: 0px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
 }
 button{
-    background-color: #6fe8ec54;
+    background-color: #6fe8ec28;
     transition-property: background-color;
     border-radius: 10%;
     border-color:#9ef0f3;
@@ -37,8 +47,7 @@ button:hover{
     background-color:#7aeff388;
 }
 #gen{
-    float:left;
-    width:50vw;
+    grid-column: 1/2;
     height: inherit;
     margin:0px;
 }
@@ -46,6 +55,14 @@ button:hover{
     width: auto;
     height: auto;
     vertical-align: middle;
+    text-align: center;
+}
+#editor{
+    grid-column: 2/3;
+    height: ;
+    margin: 0px;
+    display: grid;
+    grid-template-rows: 8em 8em 8em 8em 8em;
     border-color: #9ef0f3;
     border-style: solid;
     border-width: 5px;
@@ -54,32 +71,78 @@ button:hover{
     padding: 25px;
     display: inline-block;
     box-shadow: 0px 0px 8px #9ef0f3;
-
-
-}
-#editor{
-    float: right;
-    width: 50vw;
-    margin: 0px;
     
 }
 .manip{
     text-align: right;
+    height: 100px;
+    
 }
-#shadow{
+#armControl{
+    grid-row: 4/5;
+}
+#legControl{
+    grid-row: 5/6;
+}
+#bodyHeightCtrl{
+    grid-row: 2/3;
+}
+#bodyWidthCtrl{
+    grid-row: 346;
+}
+/* #shadow{
     height: 5vh;
     width: 40vw;
     background-color: rgb(45, 46, 54);
     border-radius: 50%;
+} */
+#creature{
+    align-content: center;
+    
 }
 #body{
+    border-radius: 60px 80px 0 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
     width: 100px;
     height:250px;
+    margin: auto;
     background-color: lawngreen;
+    z-index: 0;
 }
-.arm{
 
+.arm{
+    position: absolute;
+    width: 50px;
+    height:250px;
+    left:-50px;
+    background-color: cornflowerblue;
+    z-index: 1;
+}
+.arm:after{
+    content: "";
+    position: absolute;
+    width: 50px;
+    height:250px;
+    background-color: rgb(80, 113, 173);
+    left:100px;
 }
 .leg{
-
+    position: absolute;
+    width: 50px;
+    height:250px;
+    bottom:-250px;
+    background-color: brown;
+    z-index: 1;
+}
+.leg:after{
+    content: "";
+    position: absolute;
+    width: 50px;
+    height:250px;
+    right: -50px;
+    background-color: rgb(202, 74, 74);
 }
