@@ -144,16 +144,36 @@ button:hover{
     100%{top:-128px}
 }
 .eyes{
-    bottom: 40px;
-    right: 35px;
+    bottom: 65px;
+    right: 10px;
     position: absolute;
     content:"";
     background-color: #ffda1f;
-    height: 15px;
-    width:25px;
-    border-radius: 50%;
+    height: 20px;
+    width:28px;
+    border-radius: 100% 32% 76% 50% / 100% 33% 100%33% ; 
     border: solid 2px black;
 
+}
+.eyes:after{
+    right: 50px;
+    position: absolute;
+    content:"";
+    background-color: #ffda1f;
+    height: 20px;
+    width:28px;
+    border-radius:32% 100% 50% 76% / 33% 100% 33% 100%; 
+    border: solid 2px black;
+}
+.eyes:after:after{
+    right: 50px;
+    position: absolute;
+    content:"";
+    background-color: #2b2406;
+    height: 20px;
+    width:28px;
+    border-radius:32% 100% 50% 76% / 33% 100% 33% 100%; 
+    border: solid 2px black;
 }
 .arm{
     position: absolute;
