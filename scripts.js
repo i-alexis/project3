@@ -6,7 +6,7 @@
         > 1=biped
         > 2=quadruped: change arms to display:none
 */
-var numOfArms   
+var numOfArms=1   
 var bodyHeight=250
 var bodyWidth=150
 var limbWidth=45
@@ -29,7 +29,22 @@ function adjustWidth(){
     console.log(armPos)
 }
 
-//HEIGHT/WIDTH SLIDERS
+// function adjustArms(){
+//     numOfArms=parseInt($("#armHandle").val())
+//     var armClone=$("#arms").clone(true)
+//     var armTop=parseInt($("#arms").css("top").slice(0,-2))
+    
+//     var arms = armClone.find(".arm")
+
+//     for (i = 0; i < arms.length; i++) {
+//         arms[i].top = (armTop-100)+"px"
+//     }
+
+//     // armClone.children[0].css("top", (armTop-0)+"px")
+//     armClone.appendTo("#body")
+// }
+
+//SLIDERS
 $(function(){
     adjustWidth()
     adjustHeight()
@@ -40,10 +55,8 @@ $(function(){
     $("#width").change(function(){
         adjustWidth()
     })
-})
-
-
-$(function(){
     
-    
+    // $("#armHandle").change(function(){
+    //     adjustArms()
+    // })
 })

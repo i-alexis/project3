@@ -160,6 +160,7 @@ button:hover{
     width: 45px;
     height:140px;
     left:-40px;
+    top:0px;
     background-color: #6495ed;
     z-index: 1;
     animation-name: armbob;
