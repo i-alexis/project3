@@ -14,12 +14,13 @@ body{
     font-size: 15pt;
 }
 #title{
-    color:#F3E28F;
+    color:#fff1a9;
     font-size: 60pt;
     grid-row: 1/2;
     width: 100vw;
     text-align: right;
     display: block;
+    text-shadow:0px 0px 8px #fff1a9;
 }
 main{
     width: 100vw;
@@ -97,13 +98,14 @@ button:hover{
     width: 40vw;
     background-color: rgb(45, 46, 54);
     border-radius: 50%;
+    align-self: end;
 } */
 #creature{
-    align-content: center;
+    display: block;
     
 }
 #body{
-
+    align-items: center;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -112,25 +114,116 @@ button:hover{
     width: 100px;
     height:250px;
     margin: auto;
-    background-color: lawngreen;
+    background-color: #83a9f1;
     z-index: 0;
-}
+    border-radius: 10% /30% 30% 70% 70%;
+    /* border-color: rgb(57, 88, 145);
+    border-style: solid;
+    border-width: 5px; */
 
+}
+#head{
+    position: absolute;
+    top: -120px;
+    width: 100px;
+    height:120px;
+    background-color: #384e77;
+    z-index: 2;
+    content: "";
+    border-radius: 50% 50% 50% 50% /50% 50% 70% 70%;
+    animation-name: headbob;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+    animation-direction: alternate-reverse;
+    
+}
+@keyframes headbob{
+    0% {top:-120px}
+    100%{top:-128px}
+}
+.eyes{
+    bottom: 40px;
+    right: 35px;
+    position: absolute;
+    content:"";
+    background-color: #ffda1f;
+    height: 15px;
+    width:25px;
+    border-radius: 50%;
+    border: solid 2px black;
+
+}
 .arm{
     position: absolute;
-    width: 50px;
-    height:250px;
-    left:-50px;
-    background-color: cornflowerblue;
+    width: 45px;
+    height:140px;
+    left:-40px;
+    background-color: #6495ed;
     z-index: 1;
+    animation-name: armbob;
+    animation-duration: 1.7s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+    animation-direction: alternate-reverse;
 }
-#arm2{
-    content: "";
+@keyframes armbob{
+    0% {top:-8px}
+    100%{top:5px}
+}
+#arm1{
+    border-color: #395891;
+    border-width: 12px 8px 0px 3px;
+    border-style: solid;
+    transform-origin: top right;
+    transform: rotate(15deg);
+    border-radius:58% 30% 35% 30% / 28% 56% 88% 89%;
+
+}
+#arm1:before{
+    border-color: rgb(57, 88, 145);
+    border-width: 10px 8px 0px 3px;
+    border-radius:58% 70% 28% 42% / 28% 56% 88% 89%;
+    border-style: solid;
     position: absolute;
     width: 50px;
-    height:250px;
-    background-color: rgb(80, 113, 173);
-    left:100px;
+    height:125px;
+    transform-origin: top center;
+    transform: rotate(-10deg);
+    top:117px;
+    background-color: rgb(33, 63, 119);
+    z-index: 0;
+    content: "";
+}
+#arm2{
+    transform-origin: top left;
+    transform: rotate(-15deg);
+    content: "";
+    position: absolute;
+    left:95px;
+    border-color: rgb(57, 88, 145);
+    border-style: solid;
+    border-width: 10px 8px 0px 3px;
+    border-radius:58% 30% 35% 30% / 28% 56% 88% 89%;
+    
+}
+#arm2:before{
+    position: absolute;
+    width: 50px;
+    height:125px;
+    transform-origin: top center;
+    transform: rotate(10deg);
+    top:125px;
+    border-color: rgb(57, 88, 145);
+    border-style: solid;
+    background-color: rgb(33, 63, 119);
+    z-index: 0;
+    content: "";
+    border-width: 10px 8px 0px 3px;
+    border-radius:58% 30% 35% 30% / 28% 56% 88% 89%;
+
 }
 /* .arm:after{
     content: "";
@@ -142,20 +235,52 @@ button:hover{
 } */
 .leg{
     position: absolute;
-    width: 50px;
-    height:250px;
-    bottom:-250px;
-    background-color: brown;
+    width: 45px;
+    height:140px;
+    bottom:-140px;
+    background-color: #6495ed;
     z-index: 1;
+    border-color: rgb(57, 88, 145);
+    border-style: solid;
+    border-width: 8px 6px 3px 3px;
+
+}
+#leg1{
+    border-radius: 30% 70% 9% 91% / 100% 2% 98% 0% ;
+}
+#leg1:after{
+    position: absolute;
+    bottom:-140px;
+    left: -10px;
+    content:"";
+    background-color: #6495ed;
+    border-radius: 10% 10% 0% 0% / 80% 80% 5% 5%; 
+    width: 55px;
+    height:140px;
+    border-style: solid;
+    border-width: 8px 6px 3px 3px;
+    border-color: rgb(57, 88, 145);
+
 }
 #leg2{
     position: absolute;
-    width: 50px;
-    height:250px;
-    bottom:-250px;
     left:100px;
-    background-color: brown;
     z-index: 1;
+    border-radius: 70% 30% 91% 9%/  2% 100%  0% 98% ;
+}
+#leg2:after{
+    position: absolute;
+    bottom:-140px;
+    right: -15px;
+    content:"";
+    background-color: #6495ed;
+    border-radius: 10% 10% 0% 0% / 80% 80% 5% 5%; 
+    width: 55px;
+    height:140px;
+    border-style: solid;
+    border-width: 8px 8px 3px 3px;
+    border-color: rgb(57, 88, 145);
+
 }
 /* .leg:after{
     content: "";
