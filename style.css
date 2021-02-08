@@ -18,7 +18,7 @@ body{
     font-size: 60pt;
     grid-row: 1/2;
     width: 100vw;
-    text-align: right;
+    text-align: center;
     display: block;
     text-shadow:0px 0px 8px #fff1a9;
 }
@@ -53,7 +53,36 @@ button:hover{
     grid-column: 1/2;
     height: inherit;
     margin:0px;
+    
 }
+#creature{
+    display: grid;
+    width: inherit;
+    height: inherit;
+    grid-template-columns: repeat(1fr, 3);
+    /* align-content: center; */
+    
+}
+
+#body{
+    grid-column: 2/3;
+    position: relative;
+    /* top: 60%; */
+    bottom: -80%;
+    right: 0;
+    left: 0;
+    width: 100px;
+    height:250px;
+    /* margin: auto; */
+    background-color: #83a9f1;
+    z-index: 0;
+    border-radius: 10% /30% 30% 70% 70%;
+    /* border-color: rgb(57, 88, 145);
+    border-style: solid;
+    border-width: 5px; */
+    filter:hue-rotate(10deg);
+}
+
 #bodyplan{
     width: auto;
     height: auto;
@@ -62,24 +91,29 @@ button:hover{
 }
 #editor{
     grid-column: 2/3;
-    height: ;
+    /* height: ; */
     margin: 0px;
-    display: grid;
-    grid-template-rows: 8em 8em 8em 8em 8em;
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows:1fr 1fr 1fr 1fr 1fr;
     border-color: #9ef0f3;
     border-style: solid;
     border-width: 5px;
     border-radius: 10px;
     background-color: #60fff750;
     padding: 25px;
-    display: inline-block;
     box-shadow: 0px 0px 8px #9ef0f3;
     
 }
 .manip{
     text-align: right;
     height: 100px;
+    vertical-align: middle;
+    padding: 20px;
     
+}
+input{
+    width: inherit;
 }
 #armControl{
     grid-row: 4/5;
@@ -91,7 +125,7 @@ button:hover{
     grid-row: 2/3;
 }
 #bodyWidthCtrl{
-    grid-row: 346;
+    grid-row: 3/4;
 }
 /* #shadow{
     height: 5vh;
@@ -100,28 +134,6 @@ button:hover{
     border-radius: 50%;
     align-self: end;
 } */
-#creature{
-    display: block;
-    
-}
-#body{
-    align-items: center;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    width: 100px;
-    height:250px;
-    margin: auto;
-    background-color: #83a9f1;
-    z-index: 0;
-    border-radius: 10% /30% 30% 70% 70%;
-    /* border-color: rgb(57, 88, 145);
-    border-style: solid;
-    border-width: 5px; */
-
-}
 #head{
     position: absolute;
     top: -120px;
@@ -165,22 +177,12 @@ button:hover{
     border-radius:32% 100% 50% 76% / 33% 100% 33% 100%; 
     border: solid 2px black;
 }
-.eyes:after:after{
-    right: 50px;
-    position: absolute;
-    content:"";
-    background-color: #2b2406;
-    height: 20px;
-    width:28px;
-    border-radius:32% 100% 50% 76% / 33% 100% 33% 100%; 
-    border: solid 2px black;
-}
 .arm{
     position: absolute;
     width: 45px;
     height:140px;
     left:-40px;
-    top:0px;
+    /* top:0px; */
     background-color: #6495ed;
     z-index: 1;
     animation-name: armbob;
@@ -189,10 +191,14 @@ button:hover{
     animation-iteration-count: infinite;
     animation-play-state: running;
     animation-direction: alternate-reverse;
+    animation-delay: 0.3s;
 }
+/* .arms {
+    top: 10px;
+} */
 @keyframes armbob{
-    0% {top:-8px}
-    100%{top:5px}
+    0% {margin-top: 10%}
+    100%{margin-top: -5%}   
 }
 #arm1{
     border-color: #395891;

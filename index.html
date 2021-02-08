@@ -15,32 +15,35 @@
            </div>
            <main>
                 <div id="gen">
-                        <div id="creature">                            
-                            <div id="body">
-                                <div id="head">
-                                    <div class="eyes"></div>
+                    <div id="creature">                            
+                        <div id="body">
+                            <div id="head">
+                                <div class="eyes"></div>
+                            </div>
+                            <div id="arms" class="armPair">
+                                <div class="arm" id="arm1"></div>
+                                <div class="arm"id="arm2"></div>
+                            </div>
+                            <div id="legs">
+                                <div class="leg" id="leg1"></div>
+                                <div class="leg" id="leg2"></div>
+                            </div>
+                            <div id="feet">
+                                <div class="foot">
+                                    
                                 </div>
-                                <div id="arms">
-                                    <div class="arm" id="arm1"></div>
-                                    <div class="arm"id="arm2"></div>
-                                </div>
-                                <div id="legs">
-                                    <div class="leg" id="leg1"></div>
-                                    <div class="leg" id="leg2"></div>
-                                </div>
-                              
                             </div>
                         </div>
-                        <div id="shadow">
+                    </div>
+                    <!-- <div id="shadow">
 
-                        </div>
-                        
+                    </div>                         -->
                 </div>
                 <div id="editor">
-                        <div id="bodyplan">
+                        <!-- <div id="bodyplan">
                             <b>choose a body plan:</b><br>
                             <button>BIPED</button><button>QUADRUPED</button>
-                        </div>
+                        </div> -->
                         <div class="manip" id="bodyHeightCtrl">
                             body height
                             <input id="height" type="range" step="10" min="200" max="400">
@@ -51,11 +54,15 @@
                         </div>
                         <div class="manip" id="armControl">
                             pairs of arms
-                            <input id="armHandle" type="range" min="1" max="10" value="1">
+                            <input id="armHandle" type="range" min="1" max="5" value="1">
                         </div>
-                        <div class="manip" id="legControl">
-                            pairs of legs
-                            <input id="legHandle" type="range" step="1">
+                        <div class="manip" id="eyeColor">
+                            eye color
+                            <input id="eyeHandle" type="range" step="1" min="0" max="360" value="0">
+                        </div>
+                        <div class="manip" id="color">
+                            body color
+                            <input id="colorHandle" type="range" value="0" min="0" max="360">
                         </div>
                         
                 </div>
