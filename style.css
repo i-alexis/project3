@@ -23,7 +23,7 @@ body{
     display: block;
     text-shadow:0px 0px 8px #9ef0f3;
     animation-name: titleglow;
-    animation-duration: 2s;
+    animation-duration: 2.5s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
     animation-play-state: running;
@@ -36,7 +36,7 @@ hr{
 
 }
 @keyframes titleglow{
-    0%{text-shadow:0px 0px 8px #9ef0f3}
+    0%{text-shadow:0px 0px 10px #9ef0f3}
     100%{text-shadow:0px 0px 15px #9ef0f3}
 }
 main{
