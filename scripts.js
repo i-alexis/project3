@@ -21,7 +21,7 @@ function adjustHeight(){
     bodyHeight=($("#height").val()) + "px"
     $("#body").css("height", bodyHeight)
     console.log($("#body").css("top"))
-    $("#body").css({"margin-top": parseInt((($("#gen").offsetHeight)/2)-(bodyHeight/2))})
+    // $("#body").css({"margin-top": parseInt((($("#gen").offsetHeight)/2)-(bodyHeight/2))})
 }
 
 function adjustWidth(){
