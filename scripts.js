@@ -21,7 +21,7 @@ function adjustHeight(){
     bodyHeight=($("#height").val()) + "px"
     $("#body").css("height", bodyHeight)
     console.log($("#body").css("top"))
-
+    $("#body").css({"margin-top": parseInt((($("#gen").offsetHeight)/2)-(bodyHeight/2))})
 }
 
 function adjustWidth(){
@@ -36,13 +36,9 @@ function adjustWidth(){
     console.log(armPos)
 }
 
-function adjustArms(){
-   // while ($("#armCopy"))
-        $(".armCopy").remove()
-    // $("#armCopy").each(function(){
-    //     this.remove()
-    // });
-
+function adjustArms(){         
+    $(".arm").stop() 
+    $(".armCopy").remove()
     numOfArms=parseInt($("#armHandle").val())
     console.log(numOfArms)            
     var armInt = parseInt(bodyHeight.slice(0,-2))/5
@@ -53,8 +49,10 @@ function adjustArms(){
         var armRaise = parseInt(11*numOfArms)       
         $(".armPair").children("#arm2").css({ "transform": "rotate(-"+ parseInt(armRaise) +"deg)"})
         $(".armPair").children("#arm1").css({ "transform": "rotate("+ parseInt(armRaise) +"deg)"})
+        $(".armPair").removeClass("armbob")
+        $(".armCopy").removeClass("armbob")
 
-        for (i=1; i < numOfArms; i++) {
+        for (i=1; i < numOfArms; i++) {    
             var $armClone = $("#arms").clone(true)
             $armClone.prop("class", "armCopy")
             console.log(bodyHeight)
@@ -67,51 +65,30 @@ function adjustArms(){
             $armClone.children("#arm1").css({ "transform": "rotate("+ parseInt(armRaise-(10*(i-1))) +"deg)"})
             $armClone.children("#arm2").css({ "transform": "rotate(-"+ parseInt(armRaise-(10*(i-1))) +"deg)"})
             $armClone.appendTo("#body")
-        }
+            $(".armPair").addClass("armbob")
+            $(".armCopy").addClass("armbob")
+
+        } 
+    
     } else if(numOfArms==1){
         var armRaise = 10      
         $(".armPair").children("#arm2").css({ "transform": "rotate(-"+ parseInt(armRaise) +"deg)"})
         $(".armPair").children("#arm1").css({ "transform": "rotate("+ parseInt(armRaise) +"deg)"})
+        $(".armPair").addClass("armbob")
+
     }
-
-
-
-    // var $armClone=$("#arms").clone(true))
-    // $armClone.prop("class","armPair")
-    // var armTop=parseInt($("#arms").css("top").slice(0,-2))
-    // $(".armPair").children(".arm").css({"top":(armInt*numOfArms)+"px)"})
-    // console.log(armInt*numOfArms)
-    // var arms = $armClone.children() //.find(".arm")
-    // console.log(arms)
     
-
-    // arms.each(
-    //     function() {
-    //         console.log(this)
-    //         console.log($(this).top)
-    //     }
-    // )
-    // for (i = 0; i < arms.length; i++) {
-    //     armTop=armTop-100
-    //     thisArm = arms[i]
-    //     console.log(thisArm)
-    //     console.log(thisArm.top)
-    //     arms[i].css("top", "-100px") //= (armTop)+"px"
-    // }
-
-    // $armClone.children[0].css("top", (armTop-0)+"px")
-   
 }
 
 function adjustColor(){
     bodyColor=parseInt($("#colorHandle").val())+"deg"
-    $("#body").css("filter", "hue-rotate("+bodyColor+")")
+    $("#body").not(("#head")).css("filter", "hue-rotate("+bodyColor+")")
     console.log(bodyColor)
 }
 
 function adjustEyeColor(){
     eyeColor=parseInt($("#eyeHandle").val())+"deg"
-    $(".eyes").css("filter", "hue-rotate("+eyeColor+")")
+    $("#head").children(".eyes").css({"filter": "hue-rotate("+eyeColor+")"})
 }
 
 //SLIDERS
@@ -119,6 +96,7 @@ $(function(){
     adjustWidth()
     adjustHeight()
     adjustColor()
+    adjustEyeColor()
     $("#height").change(function(){
         adjustHeight()
         adjustArms()
@@ -133,6 +111,9 @@ $(function(){
     })
     $("#colorHandle").change(function(){
         adjustColor()
+    })
+    $("#eyeHandle").change(function(){
+        adjustEyeColor()
     })
 })
 

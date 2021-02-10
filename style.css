@@ -21,6 +21,16 @@ body{
     text-align: center;
     display: block;
     text-shadow:0px 0px 8px #fff1a9;
+    animation-name: titleglow;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+    animation-direction: alternate-reverse;
+}
+@keyframes titleglow{
+    0%{text-shadow:0px 0px 8px #fff1a9}
+    100%{text-shadow:0px 0px 15px #fff1a9}
 }
 main{
     width: 100vw;
@@ -53,13 +63,12 @@ button:hover{
     grid-column: 1/2;
     height: inherit;
     margin:0px;
-    
-}
+    background: radial-gradient(circle, rgba(27,37,46,1) 0%, rgba(19,27,33,0) 32%, rgba(0,0,0,0) 100%);}
 #creature{
     display: grid;
     width: inherit;
     height: inherit;
-    grid-template-columns: repeat(1fr, 3);
+    grid-template-columns: repeat(1fr 3);
     /* align-content: center; */
     
 }
@@ -103,8 +112,10 @@ button:hover{
     background-color: #60fff750;
     padding: 25px;
     box-shadow: 0px 0px 8px #9ef0f3;
-    
+    font-size: 18pt;
+    text-align: center;
 }
+
 .manip{
     text-align: right;
     height: 100px;
@@ -112,7 +123,7 @@ button:hover{
     padding: 20px;
     
 }
-input{
+.slider{
     width: inherit;
 }
 #armControl{
@@ -128,11 +139,16 @@ input{
     grid-row: 3/4;
 }
 /* #shadow{
+    position: absolute;
     height: 5vh;
     width: 40vw;
-    background-color: rgb(45, 46, 54);
+    background-color: rgb(16, 17, 20);
     border-radius: 50%;
     align-self: end;
+    z-index: ;
+    grid-column: 2/3;
+    z-index:-1;
+    margin: auto;
 } */
 #head{
     position: absolute;
@@ -189,15 +205,16 @@ input{
     animation-duration: 1.7s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
-    animation-play-state: running;
+    animation-play-state:running;
     animation-direction: alternate-reverse;
-    animation-delay: 0.3s;
+
+    /* animation-delay: 0.3s; */
 }
 /* .arms {
     top: 10px;
 } */
 @keyframes armbob{
-    0% {margin-top: 10%}
+    0% {margin-top: 5%}
     100%{margin-top: -5%}   
 }
 #arm1{
@@ -317,3 +334,39 @@ input{
     right: -50px;
     background-color: rgb(202, 74, 74); 
 }*/
+
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 10px; 
+    background: #9ef0f33f; 
+    border-radius: 5px;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .4s; 
+    transition: opacity .4s;
+}
+  
+.slider:hover {
+    opacity: 1; 
+}
+  
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #9ef0f3e0;
+    cursor: pointer; 
+}
+  
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px; 
+    background: #9ef0f3e0; 
+    cursor: pointer; 
+    border-radius: 50%;
+
+}
