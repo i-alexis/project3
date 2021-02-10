@@ -14,13 +14,14 @@ body{
     font-size: 15pt;
 }
 #title{
-    color:#fff1a9;
+    color:#9ef0f3;
     font-size: 60pt;
     grid-row: 1/2;
     width: 100vw;
-    text-align: center;
+    text-align: left;
+    padding-left: 100px;
     display: block;
-    text-shadow:0px 0px 8px #fff1a9;
+    text-shadow:0px 0px 8px #9ef0f3;
     animation-name: titleglow;
     animation-duration: 2s;
     animation-timing-function: ease-in-out;
@@ -28,9 +29,15 @@ body{
     animation-play-state: running;
     animation-direction: alternate-reverse;
 }
+hr{
+    border:solid #9ef0f3;
+    opacity: 50%;
+    box-shadow:0px 0px 8px #9ef0f3;
+
+}
 @keyframes titleglow{
-    0%{text-shadow:0px 0px 8px #fff1a9}
-    100%{text-shadow:0px 0px 15px #fff1a9}
+    0%{text-shadow:0px 0px 8px #9ef0f3}
+    100%{text-shadow:0px 0px 15px #9ef0f3}
 }
 main{
     width: 100vw;
@@ -63,7 +70,7 @@ button:hover{
     grid-column: 1/2;
     height: inherit;
     margin:0px;
-    background: radial-gradient(circle, rgba(27,37,46,1) 0%, rgba(19,27,33,0) 32%, rgba(0,0,0,0) 100%);}
+    background: radial-gradient(circle, #2b3b49 0%, #131b2100 32%, #00000000 100%);}
 #creature{
     display: grid;
     width: inherit;
@@ -86,9 +93,9 @@ button:hover{
     background-color: #83a9f1;
     z-index: 0;
     border-radius: 10% /30% 30% 70% 70%;
-    /* border-color: rgb(57, 88, 145);
+    border-color: rgb(57, 88, 145);
     border-style: solid;
-    border-width: 5px; */
+    border-width: 5px;
     filter:hue-rotate(10deg);
 }
 
@@ -155,10 +162,12 @@ button:hover{
     top: -120px;
     width: 100px;
     height:120px;
-    background-color: #384e77;
+    background-color: #5879b6;
     z-index: 2;
     content: "";
     border-radius: 50% 50% 50% 50% /50% 50% 70% 70%;
+    border:solid  #395891 ;
+    border-width: 7px 7px 4px 4px; 
     animation-name: headbob;
     animation-duration: 2s;
     animation-timing-function: ease-in-out;
@@ -173,14 +182,14 @@ button:hover{
 }
 .eyes{
     bottom: 65px;
-    right: 10px;
+    right:4px;
     position: absolute;
     content:"";
     background-color: #ffda1f;
     height: 20px;
     width:28px;
     border-radius: 100% 32% 76% 50% / 100% 33% 100%33% ; 
-    border: solid 2px black;
+    border: solid 2px #6e5612;
 
 }
 .eyes:after{
@@ -191,7 +200,7 @@ button:hover{
     height: 20px;
     width:28px;
     border-radius:32% 100% 50% 76% / 33% 100% 33% 100%; 
-    border: solid 2px black;
+    border: solid 2px #6e5612;
 }
 .arm{
     position: absolute;
